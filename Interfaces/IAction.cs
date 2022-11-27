@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSharpLab7.Interfaces
 {
-    interface IAction : ICloneable
+    interface IAction : ICloneable, IHaveAdditionalProperty
     {
-        public Dictionary<String, String> propertys
-        {
-            get;
-        }
-        public Action getActiontMethod(IGetMassage recipient = null);
-        public Action getActiontMethod(IAction action = null);
-        public delegate void Action(ICard sender = null, IGetMassage recipient = null, List<IGetMassage> anotherRecipient = null);
+        public Action GetActionMethod(ITakeMessage recipient = null);
+        public delegate void Action(ICard sender = null, ITakeMessage recipient = null, List<ITakeMessage> anotherRecipient = null);
     }
 }

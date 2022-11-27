@@ -5,10 +5,4 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Cards\" />
-    <Folder Include="Actions\" />
-    <Folder Include="Effects\Test\" />
-  </ItemGroup>
-
 </Project>

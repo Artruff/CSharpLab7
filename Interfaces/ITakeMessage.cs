@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CSharpLab7.Interfaces
 {
-    interface IGetMassage
+    interface ITakeMessage
     {
-        public void getMessage(IMessage message);
+        public void takeMessage(IMessage message);
     }
 }

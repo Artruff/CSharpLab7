@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace CSharpLab7.Interfaces
 {
-    interface IEffect : ICloneable
+    interface IEffect : ICloneable, IHaveAdditionalProperty
     {
-        public Dictionary<String, String> propertys
-        {
-            get;
-        }
         List<Enumerators.MomentsOfEvents> moments { get;}
-        public Effect getEffectMethod(IGetMassage owner = null);
-        public delegate void Effect(ICard sender = null, IAction action = null, IGetMassage owner = null);
+        public Effect GetEffectMethod(Enumerators.MomentsOfEvents moment, ITakeMessage owner = null);
+        public Effect GetEffectMethod(IAction action = null);
+        public delegate void Effect(ICard sender = null, IAction action = null, ITakeMessage owner = null);
     }
 }

@@ -6,27 +6,15 @@ using System.Threading.Tasks;
 
 namespace CSharpLab7.Interfaces
 {
-    interface ICard : IGetMassage
+    interface ICard : ITakeMessage, ICloneable, IHaveBasicProperty, IHaveAdditionalProperty, IHaveEffect
     {
-        public int healthPoint { get; set; }
-        public int manaPoint { get; set; }
-        public int gold { get; set; }
-        public Dictionary<String,String> propertys
-        {
-            get;
-        }
-        public List<IEffect> effects
-        {
-            get;
-        }
+        public IPlayer owner { get; }
         public List<IAction> actions
         {
             get;
         }
-        public void sendMessage();
+        public IMessage createMessage();
         public void intoTheGame();
         public void exitTheGame();
-        public SelectMethod selectMethod { get; }
-        public delegate List<ICard> SelectMethod(params int[] coefficients);
     }
 }

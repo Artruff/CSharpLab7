@@ -12,7 +12,7 @@ namespace CSharpLab7.Interfaces
         {
             get;
         }
-        public List<IGetMassage> recipients
+        public List<ITakeMessage> recipients
         {
             get;
         }

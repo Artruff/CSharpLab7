@@ -61,7 +61,10 @@ namespace CSharpLab7.Players
             _gold = gold;
             _manaPoint = mn;
             _healthPoint = hp;
-            _collode = new List<Interfaces.ICard>(collode);
+            if(collode == null)
+                _collode = new List<Interfaces.ICard>();
+            else
+                _collode = new List<Interfaces.ICard>(collode);
             _hand = new List<Interfaces.ICard>();
             _effects = new List<Interfaces.IEffect>();
             _propertys = new Dictionary<string, string>();
@@ -76,14 +79,16 @@ namespace CSharpLab7.Players
         {
             return new ClassicPlayer(this);
         }
-        public void getMessage(Interfaces.IMessage message) 
+        public void takeMessage(Interfaces.IMessage message) 
         {
             foreach (Interfaces.IAction action in message.actions)
             {
                 Interfaces.IAction tmp = (Interfaces.IAction)action.Clone();
                 foreach (Interfaces.IEffect effect in effects.Where(e => e.moments.Contains(Enumerators.MomentsOfEvents.ReceivingMessage)))
-                    effect.getEffectMethod(message.sender)(message.sender, tmp, this);
-                tmp.getActiontMethod(message.sender)(message.sender, this, (List<Interfaces.IGetMassage>)(message.recipients.Where(r => r != this)));
+                    effect.GetEffectMethod(action)(message.sender, tmp, this);
+                List<Interfaces.ITakeMessage> anotherRecipient = new List<Interfaces.ITakeMessage>(message.recipients);
+                anotherRecipient.Remove(this);
+                tmp.GetActionMethod(message.sender)(message.sender, this, anotherRecipient);
             }
         }
     }
