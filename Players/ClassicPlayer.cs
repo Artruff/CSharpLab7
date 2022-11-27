@@ -83,7 +83,7 @@ namespace CSharpLab7.Players
                 Interfaces.IAction tmp = (Interfaces.IAction)action.Clone();
                 foreach (Interfaces.IEffect effect in effects.Where(e => e.moments.Contains(Enumerators.MomentsOfEvents.ReceivingMessage)))
                     effect.applyEffect(message.sender, tmp, message.recipients);
-                tmp.DoAction(message.sender, message.recipients);
+                tmp.DoAction(message.sender, this, (List<Interfaces.IGetMassage>)(message.recipients.Where(r => r!=this)));
             }
         }
     }

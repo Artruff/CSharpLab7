@@ -12,7 +12,7 @@ namespace CSharpLab7.Interfaces
         {
             get;
         }
-        public Action DoAction(ICard sender = null, List<IGetMassage> recipients = null);
-        public delegate void Action(ICard sender = null, List<IGetMassage> recipients = null);
+        public Action DoAction(ICard sender = null, IGetMassage recipient = null, List<IGetMassage> anotherRecipient = null);
+        public delegate void Action(ICard sender = null, IGetMassage recipient = null, List<IGetMassage> anotherRecipient = null);
     }
 }
