@@ -13,7 +13,7 @@ namespace CSharpLab7.Interfaces
             get;
         }
         List<Enumerators.MomentsOfEvents> moments { get;}
-        public void applyEffect(ICard sender = null, IAction action = null, List<IGetMassage> recipients = null);
-        public delegate void Effect(ICard sender = null, IAction action = null, List<IGetMassage> recipients = null);
+        public Effect getEffectMethod(IGetMassage owner = null);
+        public delegate void Effect(ICard sender = null, IAction action = null, IGetMassage owner = null);
     }
 }

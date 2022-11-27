@@ -8,7 +8,7 @@
   <ItemGroup>
     <Folder Include="Cards\" />
     <Folder Include="Actions\" />
-    <Folder Include="Effects\" />
+    <Folder Include="Effects\Test\" />
   </ItemGroup>
 
 </Project>

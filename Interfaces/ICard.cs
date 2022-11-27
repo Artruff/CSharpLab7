@@ -26,5 +26,7 @@ namespace CSharpLab7.Interfaces
         public void sendMessage();
         public void intoTheGame();
         public void exitTheGame();
+        public SelectMethod selectMethod { get; }
+        public delegate List<ICard> SelectMethod(params int[] coefficients);
     }
 }

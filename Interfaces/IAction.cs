@@ -12,7 +12,8 @@ namespace CSharpLab7.Interfaces
         {
             get;
         }
-        public Action DoAction(ICard sender = null, IGetMassage recipient = null, List<IGetMassage> anotherRecipient = null);
+        public Action getActiontMethod(IGetMassage recipient = null);
+        public Action getActiontMethod(IAction action = null);
         public delegate void Action(ICard sender = null, IGetMassage recipient = null, List<IGetMassage> anotherRecipient = null);
     }
 }
