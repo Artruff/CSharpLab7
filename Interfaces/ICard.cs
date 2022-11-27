@@ -25,5 +25,6 @@ namespace CSharpLab7.Interfaces
         }
         public void sendMessage();
         public void intoTheGame();
+        public void exitTheGame();
     }
 }

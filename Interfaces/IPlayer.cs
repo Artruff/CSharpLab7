@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace CSharpLab7.Interfaces
 {
-    interface IPlayer : IGetMassage
+    interface IPlayer : IGetMassage, ICloneable
     {
-        public int healthPoint { get; set; }
-        public int manaPoint { get; set; }
-        public int gold { get; set; }
+        public int healthPoint { get;}
+        public int addHealthPoint { set; }
+        public int manaPoint { get; }
+        public int addManaPoint { set; }
+        public int gold { get; }
+        public int addGold { set; }
         public Dictionary<String, String> propertys
         {
             get;
@@ -19,5 +22,7 @@ namespace CSharpLab7.Interfaces
         {
             get;
         }
+        public List<ICard> collode { get; }
+        public List<ICard> hand { get; }
     }
 }
