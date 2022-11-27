@@ -12,6 +12,6 @@ namespace CSharpLab7.Interfaces
         {
             get;
         }
-        public delegate void Effect(ICard sender = null, IAction action = null, ICard[] recipients = null);
+        public delegate void Effect(ICard sender = null, IAction action = null, List<IGetMassage> recipients = null);
     }
 }

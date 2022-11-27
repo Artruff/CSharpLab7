@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpLab7.Interfaces
 {
-    interface IPlayer
+    interface IPlayer : IGetMassage
     {
         public int healthPoint { get; set; }
         public int manaPoint { get; set; }
@@ -19,6 +19,5 @@ namespace CSharpLab7.Interfaces
         {
             get;
         }
-        public void getMessage(IMessage message);
     }
 }

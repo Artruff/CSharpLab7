@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpLab7.Interfaces
 {
-    interface ICard
+    interface ICard : IGetMassage
     {
         public int healthPoint { get; set; }
         public int manaPoint { get; set; }
@@ -24,7 +24,6 @@ namespace CSharpLab7.Interfaces
             get;
         }
         public void sendMessage();
-        public void getMessage(IMessage message);
         public void intoTheGame();
     }
 }

@@ -12,7 +12,7 @@ namespace CSharpLab7.Interfaces
         {
             get;
         }
-        public List<ICard> recipients
+        public List<IGetMassage> recipients
         {
             get;
         }
